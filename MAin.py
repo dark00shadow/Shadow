@@ -2,11 +2,101 @@ import pyglet
 from pyglet.window import mouse, key
 from RectangleCollision import *
 from MouseStuff import MouseStateHandler
-
+def read_line(filename, linenumber):
+    with open(filename, 'r') as f:
+        f.seek(linenumber)
+        line = f.readline()
+    return line.replace('\n', '')
+    return line[:-1]
 print('block limit = 5, player limit = 1, goal limit = 1 and enemy limit = 2')
 print('load dont work right now')
 Enter = str(input('load or console? load/console>> '))
-
+if Enter == 'load':
+    File = 'games/' + str(input('File name>> '))
+    Screen_Name = read_line(File, 1)
+    screen_width = read_line(File, 2)
+    screen_height = read_line(File, 3)
+    class player():
+        direction = ''
+        posx = read_line(File, 4)
+        posy = read_line(File, 5)
+        oldposx = posx
+        oldposy = posy
+        image = pyglet.image.load('Textures/'+ read_line(File, 6))
+        width = read_line(File, 7)
+        heght = read_line(File, 8)
+        print('Player created')
+    class block1():
+        One = read_line(File, 9)
+        if One == 'True':
+            posx1 = read_line(File, 10)
+            posy1 = read_line(File, 11)
+            image1 = pyglet.image.load('Textures/'+ read_line(File, 12))
+            width1 = read_line(File, 13)
+            heght1 = read_line(File, 14)
+            print('block 1 created')
+            Two = read_line(File, 15)
+            if Two == 'True':
+                posx2 = read_line(File, 16)
+                posy2 = read_line(File, 17)
+                image2 = pyglet.image.load('Textures/'+ read_line(File, 18))
+                width2 = read_line(File, 19)
+                heght2 = read_line(File, 20)
+                print('block 2 created')
+                Three = read_line(File, 21)
+                if Three == 'True':
+                    posx3 = read_line(File, 22)
+                    posy3 = read_line(File, 23)
+                    image3 = pyglet.image.load('Textures/'+ read_line(File, 24))
+                    width3 = read_line(File, 25)
+                    heght3 = read_line(File, 26)
+                    print('block 3 created')
+                    Four = read_line(File, 27)
+                    if Four == 'True':
+                        posx4 = read_line(File, 18)
+                        posy4 = read_line(File, 19)
+                        image4 = pyglet.image.load('Textures/'+ read_line(File, 20))
+                        width4 = read_line(File, 21)
+                        heght4 = read_line(File, 22)
+                        print('block 4 created')
+                        Five = read_line(File, 23)
+                        if Five == 'True':
+                            posx5 = read_line(File, 24)
+                            posy5 = read_line(File, 25)
+                            image5 = pyglet.image.load('Textures/'+ read_line(File, 26))
+                            width5 = read_line(File, 27)
+                            heght5 = read_line(File, 28)
+                            print('block 5 created')
+    class goal():
+        show = False
+        label_text = read_line(File, 10)
+        label_size = float(input('size of you won label>> '))
+        label_posx = float(input('you won label position x>> '))
+        label_posy = float(input('you won label position y>> '))
+        label = pyglet.text.Label(label_text, x=label_posx,y=label_posy,font_size=label_size)
+        posx = float(input('goal position x>> '))
+        posy = float(input('goal position y>> '))
+        image = pyglet.image.load('Textures/'+ str(input('goal image>> ')))
+        width = float(input('x size of goal>> '))
+        heght = float(input('y size of goal>> '))
+        print('goal created')
+    class enemy1():
+        One = str(input('enemy 1? False/True>> '))
+        if One == 'True':
+            posx1 = float(input('enemy 1 position x>> '))
+            posy1 = float(input('enemy 1 position y>> '))
+            image1 = pyglet.image.load('Textures/'+ str(input('enemy 1 image>> ')))
+            width1 = float(input('x size of enemy>> '))
+            heght1 = float(input('y size of enemy>> '))
+            print('enemy 1 created')
+            Two = str(input('enemy 2? False/True>> '))
+            if Two == 'True':
+                posx2 = float(input('enemy 2 position x>> '))
+                posy2 = float(input('enemy 2 position y>> '))
+                image2 = pyglet.image.load('Textures/'+ str(input('enemy 2 image>> ')))
+                width2 = float(input('x size of enemy 2>> '))
+                heght2 = float(input('y size of enemy 2>> '))
+                print('enemy 2 created')
 if Enter == 'console':
     Screen_Name = str(input('Screen Name>> '))
     screen_width = int(input('screen width>> '))
@@ -62,12 +152,6 @@ if Enter == 'console':
             width5 = float(input('x size of block 5>> '))
             heght5 = float(input('y size of block 5>> '))
             print('block 5 created')
-        def solid(obj1x,obj1y,obj2x,obj2y,obj1w,obj1h,obj2w,obj2h):
-            if collision.rectangle(obj1x,obj1y,obj2x,obj2y,obj1w,obj1h,obj2w,obj2h):
-                if player.direction == 'up': player.posy -= 2
-                if player.direction == 'down': player.posy += 2
-                if player.direction == 'left': player.posx += 2
-                if player.direction == 'right': player.posx -= 2
     class goal():
         show = False
         label_text = str(input('text for you won label>> '))
@@ -98,6 +182,12 @@ if Enter == 'console':
             width2 = float(input('x size of enemy 2>> '))
             heght2 = float(input('y size of enemy 2>> '))
             print('enemy 2 created')
+def solid(obj1x,obj1y,obj2x,obj2y,obj1w,obj1h,obj2w,obj2h):
+            if collision.rectangle(obj1x,obj1y,obj2x,obj2y,obj1w,obj1h,obj2w,obj2h):
+                if player.direction == 'up': player.posy -= 2
+                if player.direction == 'down': player.posy += 2
+                if player.direction == 'left': player.posx += 2
+                if player.direction == 'right': player.posx -= 2
 class restart():
     def restart():
         goal.show = False
