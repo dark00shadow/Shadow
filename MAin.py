@@ -8,21 +8,20 @@ Enter = str(input('load or console? load/console>> '))
 if Enter == 'load':
     LVL = str('games/' + input('the file >> '))
     with open(LVL, 'r') as FILE:
-        global lines
         lines = [line.strip() for line in FILE.readlines()]
     FILE = open(LVL, 'r')
     Screen_Name = lines[1]
-    screen_width = FILE.readline(2)
-    screen_height = FILE.readline(3)
+    screen_width = lines[2]
+    screen_height = lines[3]
     class player():
         direction = ''
-        posx = FILE.readline(4)
-        posy = FILE.readline(5)
+        posx = lines[4]
+        posy = lines[5]
         oldposx = posx
         oldposy = posy
-        image = pyglet.image.load('Textures/' + FILE.readline(6))
-        width = FILE.readline(7)
-        heght = FILE.readline(8)
+        image = pyglet.image.load('Textures/' + lines[6])
+        width = lines[6]
+        heght = lines[7]
     class block1():
         One = FILE.readline(9)
         if One == 'True':
