@@ -58,3 +58,11 @@
  200
  100
  Three.png
+ 32
+ 32
+ [enemy2]
+ False
+
+
+
+
