@@ -8,7 +8,7 @@ print('block limit = 5, player limit = 1, goal limit = 1 and enemy limit = 2')
 Enter = str(input('load or console? load/console>> '))
 if Enter == 'load':
     LVL = str('games/' + input('the file >> '))
-    FILE = open(LVL, 'r').read()
+    FILE = path.file(open(LVL, 'r').read())
     Screen_Name = FILE.readline(1)
     screen_width = FILE.readline(2)
     screen_height = FILE.readline(3)
