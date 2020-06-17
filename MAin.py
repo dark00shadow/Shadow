@@ -1,7 +1,6 @@
 import pyglet
 from pyglet.window import mouse, key
 from RectangleCollision import *
-from os import *
 from MouseStuff import MouseStateHandler
 
 print('block limit = 5, player limit = 1, goal limit = 1 and enemy limit = 2')
