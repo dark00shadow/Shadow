@@ -2,7 +2,7 @@ import pyglet
 from pyglet.window import mouse, key
 from RectangleCollision import *
 from MouseStuff import MouseStateHandler
-lines = ''
+
 print('block limit = 5, player limit = 1, goal limit = 1 and enemy limit = 2')
 print('load dont work right now')
 Enter = str(input('load or console? load/console>> '))
