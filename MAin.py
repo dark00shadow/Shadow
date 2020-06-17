@@ -1,100 +1,186 @@
 import pyglet
 from pyglet.window import mouse, key
 from RectangleCollision import *
+from os import *
 from MouseStuff import MouseStateHandler
 
 print('block limit = 5, player limit = 1, goal limit = 1 and enemy limit = 2')
-Screen_Name = str(input('Screen Name>> '))
-screen_width = int(input('screen width>> '))
-screen_height = int(input('screen height>> '))
-class player():
-    direction = ''
-    posx = float(input('player position x>> '))
-    posy = float(input('player position y>> '))
-    oldposx = posx
-    oldposy = posy
-    image = pyglet.image.load('Textures/'+ str(input('player image>> ')))
-    width = float(input('x size of player>> '))
-    heght = float(input('y size of player>> '))
-    print('Player created')
-class block1():
-    One = str(input('block 1? False/True>> '))
-    if One == 'True':
-        posx1 = float(input('block1 position x>> '))
-        posy1 = float(input('block1 position y>> '))
-        image1 = pyglet.image.load('Textures/'+ str(input('block1 image>> ')))
-        width1 = float(input('x size of block 1>> '))
-        heght1 = float(input('y size of block 1>> '))
-        print('block 1 created')
-    Two = str(input('block 2? False/True>> '))
-    if Two == 'True':
-        posx2 = float(input('block2 position x>> '))
-        posy2 = float(input('block2 position y>> '))
-        image2 = pyglet.image.load('Textures/'+ str(input('block2 image>> ')))
-        width2 = float(input('x size of block 2>> '))
-        heght2 = float(input('y size of block 2>> '))
-        print('block 2 created')
-    Three = str(input('block 3? False/True>> '))
-    if Three == 'True':
-        posx3 = float(input('block3 position x>> '))
-        posy3 = float(input('block3 position y>> '))
-        image3 = pyglet.image.load('Textures/'+ str(input('block3 image>> ')))
-        width3 = float(input('x size of block 3>> '))
-        heght3 = float(input('y size of block 3>> '))
-        print('block 3 created')
-    Four = str(input('block 4? False/True>> '))
-    if Four == 'True':
-        posx4 = float(input('block4 position x>> '))
-        posy4 = float(input('block4 position y>> '))
-        image4 = pyglet.image.load('Textures/'+ str(input('block4 image>> ')))
-        print('block 4 created')
-        width4 = float(input('x size of block>> 4'))
-        heght4 = float(input('y size of block>> 4'))
-        print('block 4 created')
-    Five = str(input('block 5? False/True>> '))
-    if Five == 'True':
-        posx5 = float(input('block5 position x>> '))
-        posy5 = float(input('block5 position y>> '))
-        image5 = pyglet.image.load('Textures/'+ str(input('block5 image>> ')))
-        width5 = float(input('x size of block 5>> '))
-        heght5 = float(input('y size of block 5>> '))
-        print('block 5 created')
-    def solid(obj1x,obj1y,obj2x,obj2y,obj1w,obj1h,obj2w,obj2h):
-        if collision.rectangle(obj1x,obj1y,obj2x,obj2y,obj1w,obj1h,obj2w,obj2h):
-            if player.direction == 'up': player.posy -= 2
-            if player.direction == 'down': player.posy += 2
-            if player.direction == 'left': player.posx += 2
-            if player.direction == 'right': player.posx -= 2
-class goal():
-    show = False
-    label_text = str(input('text for you won label>> '))
-    label_size = float(input('size of you won label>> '))
-    label_posx = float(input('you won label position x>> '))
-    label_posy = float(input('you won label position y>> '))
-    label = pyglet.text.Label(label_text, x=label_posx,y=label_posy,font_size=label_size)
-    posx = float(input('goal position x>> '))
-    posy = float(input('goal position y>> '))
-    image = pyglet.image.load('Textures/'+ str(input('goal image>> ')))
-    width = float(input('x size of goal>> '))
-    heght = float(input('y size of goal>> '))
-    print('goal created')
-class enemy1():
-    One = str(input('enemy 1? False/True>> '))
-    if One == 'True':
-        posx1 = float(input('enemy 1 position x>> '))
-        posy1 = float(input('enemy 1 position y>> '))
-        image1 = pyglet.image.load('Textures/'+ str(input('enemy 1 image>> ')))
-        width1 = float(input('x size of enemy>> '))
-        heght1 = float(input('y size of enemy>> '))
-        print('enemy 1 created')
-    Two = str(input('enemy 2? False/True>> '))
-    if Two == 'True':
-        posx2 = float(input('enemy 2 position x>> '))
-        posy2 = float(input('enemy 2 position y>> '))
-        image2 = pyglet.image.load('Textures/'+ str(input('enemy 2 image>> ')))
-        width2 = float(input('x size of enemy 2>> '))
-        heght2 = float(input('y size of enemy 2>> '))
-        print('enemy 2 created')
+Enter = str(input('load or console? load/console>> '))
+if Enter == 'load':
+    LVL = 'games/' + str(input('the file >> '))
+    FILE = open(LVL, 'r').read()
+    Screen_Name = FILE.readline(1)
+    screen_width = FILE.readline(2)
+    screen_height = FILE.readline(3)
+    class player():
+        direction = ''
+        posx = FILE.readline(4)
+        posy = FILE.readline(5)
+        oldposx = posx
+        oldposy = posy
+        image = pyglet.image.load('Textures/' + FILE.readline(6))
+        width = FILE.readline(7)
+        heght = FILE.readline(8)
+    class block1():
+        One = FILE.readline(9)
+        if One == 'True':
+            posx1 = FILE.readline(10)
+            posy1 = FILE.readline(11)
+            image1 = pyglet.image.load('Textures/' + FILE.readline(12))
+            width1 = FILE.readline(13)
+            heght1 = FILE.readline(14)
+        Two = FILE.readline(15)
+        if Two == 'True':
+            posx2 = FILE.readline(16)
+            posy2 = FILE.readline(17)
+            image2 = pyglet.image.load('Textures/' + FILE.readline(18))
+            width2 = FILE.readline(19)
+            heght2 = FILE.readline(20)
+        Three = FILE.readline(21)
+        if Three == 'True':
+            posx3 = FILE.readline(22)
+            posy3 = FILE.readline(23)
+            image3 = pyglet.image.load('Textures/' + FILE.readline(24))
+            width3 = FILE.readline(25)
+            heght3 = FILE.readline(26)
+        Four = FILE.readline(27)
+        if Four == 'True':
+            posx4 = FILE.readline(28)
+            posy4 = FILE.readline(29)
+            image4 = pyglet.image.load('Textures/' + FILE.readline(30))
+            width4 = FILE.readline(31)
+            heght4 = FILE.readline(32)
+        Five = FILE.readline(33)
+        if Five == 'True':
+            posx5 = FILE.readline(34)
+            posy5 = FILE.readline(35)
+            image5 = pyglet.image.load('Textures/'+ FILE.readline(36))
+            width5 = FILE.readline(37)
+            heght5 = FILE.readline(38)
+        def solid(obj1x,obj1y,obj2x,obj2y,obj1w,obj1h,obj2w,obj2h):
+            if collision.rectangle(obj1x,obj1y,obj2x,obj2y,obj1w,obj1h,obj2w,obj2h):
+                if player.direction == 'up': player.posy -= 2
+                if player.direction == 'down': player.posy += 2
+                if player.direction == 'left': player.posx += 2
+                if player.direction == 'right': player.posx -= 2
+    class goal():
+        show = False
+        label_text = FILE.readline(39)
+        label_size = FILE.readline(40)
+        label_posx = FILE.readline(41)
+        label_posy = FILE.readline(42)
+        label = pyglet.text.Label(label_text, x=label_posx,y=label_posy,font_size=label_size)
+        posx = FILE.readline(43)
+        posy = FILE.readline(44)
+        image = pyglet.image.load('Textures/' + FILE.readline(45))
+        width = FILE.readline(46)
+        heght = FILE.readline(47)
+    class enemy1():
+        One = FILE.readline(49)
+        if One == 'True':
+            posx1 = FILE.readline(50)
+            posy1 = FILE.readline(51)
+            image1 = pyglet.image.load('Textures/' + FILE.readline(52))
+            width1 = FILE.readline(52)
+            heght1 = FILE.readline(53)
+        Two = FILE.readline(54)
+        if Two == 'True':
+            posx2 = FILE.readline(55)
+            posy2 = FILE.readline(56)
+            image2 = pyglet.image.load('Textures/' + FILE.readline(57))
+            width2 = FILE.readline(58)
+            heght2 = FILE.readline(59)
+if Enter == 'console':
+    Screen_Name = str(input('Screen Name>> '))
+    screen_width = int(input('screen width>> '))
+    screen_height = int(input('screen height>> '))
+    class player():
+        direction = ''
+        posx = float(input('player position x>> '))
+        posy = float(input('player position y>> '))
+        oldposx = posx
+        oldposy = posy
+        image = pyglet.image.load('Textures/'+ str(input('player image>> ')))
+        width = float(input('x size of player>> '))
+        heght = float(input('y size of player>> '))
+        print('Player created')
+    class block1():
+        One = str(input('block 1? False/True>> '))
+        if One == 'True':
+            posx1 = float(input('block1 position x>> '))
+            posy1 = float(input('block1 position y>> '))
+            image1 = pyglet.image.load('Textures/'+ str(input('block1 image>> ')))
+            width1 = float(input('x size of block 1>> '))
+            heght1 = float(input('y size of block 1>> '))
+            print('block 1 created')
+        Two = str(input('block 2? False/True>> '))
+        if Two == 'True':
+            posx2 = float(input('block2 position x>> '))
+            posy2 = float(input('block2 position y>> '))
+            image2 = pyglet.image.load('Textures/'+ str(input('block2 image>> ')))
+            width2 = float(input('x size of block 2>> '))
+            heght2 = float(input('y size of block 2>> '))
+            print('block 2 created')
+        Three = str(input('block 3? False/True>> '))
+        if Three == 'True':
+            posx3 = float(input('block3 position x>> '))
+            posy3 = float(input('block3 position y>> '))
+            image3 = pyglet.image.load('Textures/'+ str(input('block3 image>> ')))
+            width3 = float(input('x size of block 3>> '))
+            heght3 = float(input('y size of block 3>> '))
+            print('block 3 created')
+        Four = str(input('block 4? False/True>> '))
+        if Four == 'True':
+            posx4 = float(input('block4 position x>> '))
+            posy4 = float(input('block4 position y>> '))
+            image4 = pyglet.image.load('Textures/'+ str(input('block4 image>> ')))
+            width4 = float(input('x size of block>> 4'))
+            heght4 = float(input('y size of block>> 4'))
+            print('block 4 created')
+        Five = str(input('block 5? False/True>> '))
+        if Five == 'True':
+            posx5 = float(input('block5 position x>> '))
+            posy5 = float(input('block5 position y>> '))
+            image5 = pyglet.image.load('Textures/'+ str(input('block5 image>> ')))
+            width5 = float(input('x size of block 5>> '))
+            heght5 = float(input('y size of block 5>> '))
+            print('block 5 created')
+        def solid(obj1x,obj1y,obj2x,obj2y,obj1w,obj1h,obj2w,obj2h):
+            if collision.rectangle(obj1x,obj1y,obj2x,obj2y,obj1w,obj1h,obj2w,obj2h):
+                if player.direction == 'up': player.posy -= 2
+                if player.direction == 'down': player.posy += 2
+                if player.direction == 'left': player.posx += 2
+                if player.direction == 'right': player.posx -= 2
+    class goal():
+        show = False
+        label_text = str(input('text for you won label>> '))
+        label_size = float(input('size of you won label>> '))
+        label_posx = float(input('you won label position x>> '))
+        label_posy = float(input('you won label position y>> '))
+        label = pyglet.text.Label(label_text, x=label_posx,y=label_posy,font_size=label_size)
+        posx = float(input('goal position x>> '))
+        posy = float(input('goal position y>> '))
+        image = pyglet.image.load('Textures/'+ str(input('goal image>> ')))
+        width = float(input('x size of goal>> '))
+        heght = float(input('y size of goal>> '))
+        print('goal created')
+    class enemy1():
+        One = str(input('enemy 1? False/True>> '))
+        if One == 'True':
+            posx1 = float(input('enemy 1 position x>> '))
+            posy1 = float(input('enemy 1 position y>> '))
+            image1 = pyglet.image.load('Textures/'+ str(input('enemy 1 image>> ')))
+            width1 = float(input('x size of enemy>> '))
+            heght1 = float(input('y size of enemy>> '))
+            print('enemy 1 created')
+        Two = str(input('enemy 2? False/True>> '))
+        if Two == 'True':
+            posx2 = float(input('enemy 2 position x>> '))
+            posy2 = float(input('enemy 2 position y>> '))
+            image2 = pyglet.image.load('Textures/'+ str(input('enemy 2 image>> ')))
+            width2 = float(input('x size of enemy 2>> '))
+            heght2 = float(input('y size of enemy 2>> '))
+            print('enemy 2 created')
 class restart():
     def restart():
         goal.show = False
