@@ -91,11 +91,11 @@ if Enter == 'load':
             print('enemy 1 created')
         Two = read_line(File, 64)
         if Two == 'True':
-            posx2 = float(input('enemy 2 position x>> '))
-            posy2 = float(input('enemy 2 position y>> '))
-            image2 = pyglet.image.load('Textures/'+ str(input('enemy 2 image>> ')))
-            width2 = float(input('x size of enemy 2>> '))
-            heght2 = float(input('y size of enemy 2>> '))
+            posx2 = read_line(File, 65)
+            posy2 = read_line(File, 66)
+            image2 = pyglet.image.load('Textures/'+ read_line(File, 67))
+            width2 = read_line(File, 68)
+            heght2 = read_line(File, 69)
             print('enemy 2 created')
 if Enter == 'console':
     Screen_Name = str(input('Screen Name>> '))
