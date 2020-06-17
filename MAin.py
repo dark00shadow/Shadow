@@ -89,7 +89,7 @@ if Enter == 'load':
             width1 = read_line(File, 61)
             heght1 = read_line(File, 62)
             print('enemy 1 created')
-        Two = str(input('enemy 2? False/True>> '))
+        Two = read_line(File, 64)
         if Two == 'True':
             posx2 = float(input('enemy 2 position x>> '))
             posy2 = float(input('enemy 2 position y>> '))
