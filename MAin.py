@@ -2,22 +2,22 @@ import pyglet
 from pyglet.window import mouse, key
 from RectangleCollision import *
 from MouseStuff import MouseStateHandler
-import linecache
+
 print('block limit = 5, player limit = 1, goal limit = 1 and enemy limit = 2')
 Enter = str(input('load or console? load/console>> '))
 if Enter == 'load':
     LVL = str('games/' + input('the file >> '))
     FILE = open(LVL, 'r')
-    Screen_Name = linecache.getline(LVL, 1)
-    screen_width = linecache.getline(LVL, 2)
-    screen_height = linecache.getline(LVL, 3)
+    Screen_Name = FILE.readline(1)
+    screen_width = FILE.readline(2)
+    screen_height = FILE.readline(3)
     class player():
         direction = ''
-        posx = linecache.getline(LVL, 4)
-        posy = linecache.getline(LVL, 5)
+        posx = FILE.readline(4)
+        posy = FILE.readline(5)
         oldposx = posx
         oldposy = posy
-        image = pyglet.image.load('Textures/' + str(linecache.getline(LVL, 6)))
+        image = pyglet.image.load('Textures/' + FILE.readline(6))
         width = FILE.readline(7)
         heght = FILE.readline(8)
     class block1():
