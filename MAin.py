@@ -5,7 +5,11 @@ from MouseStuff import MouseStateHandler
 def read_line(filename, linenumber):
     with open(filename, 'r') as f:
         all_lines = f.read()
-    return all_lines.split('\n')[linenumber-1]
+    string_value = all_lines.split('\n')[linenumber-1]
+    try:
+        return int(string_value) # replace this with int(string_value) if needed
+    except ValueError:
+        return string_value
 print('block limit = 5, player limit = 1, goal limit = 1 and enemy limit = 2')
 print('load dont work right now')
 Enter = str(input('load or console? load/console>> '))
@@ -21,7 +25,6 @@ if Enter == 'load':
         posy = read_line(File, 6)
         oldposx = posx
         oldposy = posy
-        print(extract)
         image = pyglet.image.load('textures/'+ read_line(File, 7))
         width = read_line(File, 8)
         heght = read_line(File, 9)
