@@ -21,9 +21,8 @@ if Enter == 'load':
         posy = read_line(File, 6)
         oldposx = posx
         oldposy = posy
-        extract = 'textures/'+ read_line(File, 7)
         print(extract)
-        image = pyglet.image.load(extract)
+        image = pyglet.image.load('textures/'+ read_line(File, 7))
         width = read_line(File, 8)
         heght = read_line(File, 9)
         print('Player created')
