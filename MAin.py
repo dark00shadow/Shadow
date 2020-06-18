@@ -4,9 +4,8 @@ from RectangleCollision import *
 from MouseStuff import MouseStateHandler
 def read_line(filename, linenumber):
     with open(filename, 'r') as f:
-        f.seek(linenumber)
-        line = f.readline()
-    return line.replace('\n', '')
+        all_lines = f.read()
+    return all_lines.split('\n')[linenumber]
     return line[:-1]
 print('block limit = 5, player limit = 1, goal limit = 1 and enemy limit = 2')
 print('load dont work right now')
