@@ -1,67 +1,67 @@
- Game:1
- 600
- 600
- [player]
- 550
- 550
- One.png
- 32
- 32
- [block1]
- False
+Game:1
+600
+800
+[player]
+550
+550
+One.png
+32
+32
+[block1]
+False
 
 
 
 
 
- [block2]
- False
+[block2]
+False
 
 
 
 
 
- [block3]
- False
+[block3]
+False
 
 
 
 
 
- [block4]
- False
+[block4]
+False
 
 
 
 
 
- [block5]
- False
+[block5]
+False
 
 
 
 
 
- [you won label]
- you won
- 30
- 100
- 300
- [goal]
- 100
- 100
- Two.png
- 32
- 32
- [enemy1]
- True
- 200
- 100
- Three.png
- 32
- 32
- [enemy2]
- False
+[you won label]
+you won
+30
+100
+300
+[goal]
+100
+100
+Two.png
+32
+32
+[enemy1]
+True
+200
+100
+Three.png
+32
+32
+[enemy2]
+False
 
 
 
