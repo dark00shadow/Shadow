@@ -22,7 +22,7 @@ if Enter == 'load':
         posy = read_line(File, 6)
         oldposx = posx
         oldposy = posy
-        image = pyglet.image.load('Textures/'+ read_line(File, 7))
+        image = pyglet.image.load('textures/'+ read_line(File, 7))
         width = read_line(File, 8)
         heght = read_line(File, 9)
         print('Player created')
@@ -31,7 +31,7 @@ if Enter == 'load':
         if One == 'True':
             posx1 = read_line(File, 12)
             posy1 = read_line(File, 13)
-            image1 = pyglet.image.load('Textures/'+ read_line(File, 14))
+            image1 = pyglet.image.load('textures/'+ read_line(File, 14))
             width1 = read_line(File, 15)
             heght1 = read_line(File, 16)
             print('block 1 created')
@@ -39,7 +39,7 @@ if Enter == 'load':
         if Two == 'True':
             posx2 = read_line(File, 19)
             posy2 = read_line(File, 20)
-            image2 = pyglet.image.load('Textures/'+ read_line(File, 21))
+            image2 = pyglet.image.load('textures/'+ read_line(File, 21))
             width2 = read_line(File, 22)
             heght2 = read_line(File, 23)
             print('block 2 created')
@@ -47,7 +47,7 @@ if Enter == 'load':
         if Three == 'True':
             posx3 = read_line(File, 26)
             posy3 = read_line(File, 27)
-            image3 = pyglet.image.load('Textures/'+ read_line(File, 28))
+            image3 = pyglet.image.load('textures/'+ read_line(File, 28))
             width3 = read_line(File, 29)
             heght3 = read_line(File, 30)
             print('block 3 created')
@@ -55,7 +55,7 @@ if Enter == 'load':
         if Four == 'True':
             posx4 = read_line(File, 33)
             posy4 = read_line(File, 34)
-            image4 = pyglet.image.load('Textures/'+ read_line(File, 35))
+            image4 = pyglet.image.load('textures/'+ read_line(File, 35))
             width4 = read_line(File, 36)
             heght4 = read_line(File, 37)
             print('block 4 created')
@@ -63,7 +63,7 @@ if Enter == 'load':
         if Five == 'True':
             posx5 = read_line(File, 40)
             posy5 = read_line(File, 41)
-            image5 = pyglet.image.load('Textures/'+ read_line(File, 42))
+            image5 = pyglet.image.load('textures/'+ read_line(File, 42))
             width5 = read_line(File, 43)
             heght5 = read_line(File, 44)
             print('block 5 created')
@@ -76,7 +76,7 @@ if Enter == 'load':
         label = pyglet.text.Label(label_text, x=label_posx,y=label_posy,font_size=label_size)
         posx = read_line(File, 51)
         posy = read_line(File, 52)
-        image = pyglet.image.load('Textures/'+ read_line(File, 53))
+        image = pyglet.image.load('textures/'+ read_line(File, 53))
         width = read_line(File, 54)
         heght = read_line(File, 55)
         print('goal created')
@@ -85,7 +85,7 @@ if Enter == 'load':
         if One == 'True':
             posx1 = read_line(File, 58)
             posy1 = read_line(File, 59)
-            image1 = pyglet.image.load('Textures/'+ read_line(File, 60))
+            image1 = pyglet.image.load('textures/'+ read_line(File, 60))
             width1 = read_line(File, 61)
             heght1 = read_line(File, 62)
             print('enemy 1 created')
@@ -93,7 +93,7 @@ if Enter == 'load':
         if Two == 'True':
             posx2 = read_line(File, 65)
             posy2 = read_line(File, 66)
-            image2 = pyglet.image.load('Textures/'+ read_line(File, 67))
+            image2 = pyglet.image.load('textures/'+ read_line(File, 67))
             width2 = read_line(File, 68)
             heght2 = read_line(File, 69)
             print('enemy 2 created')
@@ -107,7 +107,7 @@ if Enter == 'console':
         posy = float(input('player position y>> '))
         oldposx = posx
         oldposy = posy
-        image = pyglet.image.load('Textures/'+ str(input('player image>> ')))
+        image = pyglet.image.load('textures/'+ str(input('player image>> ')))
         width = float(input('x size of player>> '))
         heght = float(input('y size of player>> '))
         print('Player created')
@@ -116,7 +116,7 @@ if Enter == 'console':
         if One == 'True':
             posx1 = float(input('block1 position x>> '))
             posy1 = float(input('block1 position y>> '))
-            image1 = pyglet.image.load('Textures/'+ str(input('block1 image>> ')))
+            image1 = pyglet.image.load('textures/'+ str(input('block1 image>> ')))
             width1 = float(input('x size of block 1>> '))
             heght1 = float(input('y size of block 1>> '))
             print('block 1 created')
@@ -124,7 +124,7 @@ if Enter == 'console':
         if Two == 'True':
             posx2 = float(input('block2 position x>> '))
             posy2 = float(input('block2 position y>> '))
-            image2 = pyglet.image.load('Textures/'+ str(input('block2 image>> ')))
+            image2 = pyglet.image.load('textures/'+ str(input('block2 image>> ')))
             width2 = float(input('x size of block 2>> '))
             heght2 = float(input('y size of block 2>> '))
             print('block 2 created')
@@ -132,7 +132,7 @@ if Enter == 'console':
         if Three == 'True':
             posx3 = float(input('block3 position x>> '))
             posy3 = float(input('block3 position y>> '))
-            image3 = pyglet.image.load('Textures/'+ str(input('block3 image>> ')))
+            image3 = pyglet.image.load('textures/'+ str(input('block3 image>> ')))
             width3 = float(input('x size of block 3>> '))
             heght3 = float(input('y size of block 3>> '))
             print('block 3 created')
@@ -140,7 +140,7 @@ if Enter == 'console':
         if Four == 'True':
             posx4 = float(input('block4 position x>> '))
             posy4 = float(input('block4 position y>> '))
-            image4 = pyglet.image.load('Textures/'+ str(input('block4 image>> ')))
+            image4 = pyglet.image.load('textures/'+ str(input('block4 image>> ')))
             width4 = float(input('x size of block>> 4'))
             heght4 = float(input('y size of block>> 4'))
             print('block 4 created')
@@ -148,7 +148,7 @@ if Enter == 'console':
         if Five == 'True':
             posx5 = float(input('block5 position x>> '))
             posy5 = float(input('block5 position y>> '))
-            image5 = pyglet.image.load('Textures/'+ str(input('block5 image>> ')))
+            image5 = pyglet.image.load('textures/'+ str(input('block5 image>> ')))
             width5 = float(input('x size of block 5>> '))
             heght5 = float(input('y size of block 5>> '))
             print('block 5 created')
@@ -161,7 +161,7 @@ if Enter == 'console':
         label = pyglet.text.Label(label_text, x=label_posx,y=label_posy,font_size=label_size)
         posx = float(input('goal position x>> '))
         posy = float(input('goal position y>> '))
-        image = pyglet.image.load('Textures/'+ str(input('goal image>> ')))
+        image = pyglet.image.load('textures/'+ str(input('goal image>> ')))
         width = float(input('x size of goal>> '))
         heght = float(input('y size of goal>> '))
         print('goal created')
@@ -170,7 +170,7 @@ if Enter == 'console':
         if One == 'True':
             posx1 = float(input('enemy 1 position x>> '))
             posy1 = float(input('enemy 1 position y>> '))
-            image1 = pyglet.image.load('Textures/'+ str(input('enemy 1 image>> ')))
+            image1 = pyglet.image.load('textures/'+ str(input('enemy 1 image>> ')))
             width1 = float(input('x size of enemy>> '))
             heght1 = float(input('y size of enemy>> '))
             print('enemy 1 created')
@@ -178,7 +178,7 @@ if Enter == 'console':
         if Two == 'True':
             posx2 = float(input('enemy 2 position x>> '))
             posy2 = float(input('enemy 2 position y>> '))
-            image2 = pyglet.image.load('Textures/'+ str(input('enemy 2 image>> ')))
+            image2 = pyglet.image.load('textures/'+ str(input('enemy 2 image>> ')))
             width2 = float(input('x size of enemy 2>> '))
             heght2 = float(input('y size of enemy 2>> '))
             print('enemy 2 created')
