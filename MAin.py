@@ -11,7 +11,6 @@ def read_line(filename, linenumber):
     except ValueError:
         return string_value
 print('block limit = 5, player limit = 1, goal limit = 1 and enemy limit = 2')
-print('load dont work right now')
 Enter = str(input('load or console? load/console>> '))
 if Enter == 'load':
     File = 'games/' + str(input('File name>> '))
@@ -255,11 +254,11 @@ def update1(dt):
     # Restart if play = False
     if play == False: restart.restart()
     # Solid
-    if block1.One == 'True': block1.solid(player.posx,player.posy,block1.posx1,block1.posy1,player.heght,player.width,block1.width1,block1.heght1)
-    if block1.Two == 'True': block1.solid(player.posx,player.posy,block1.posx2,block1.posy2,player.heght,player.width,block1.width2,block1.heght2)
-    if block1.Three == 'True': block1.solid(player.posx,player.posy,block1.posx3,block1.posy3,player.heght,player.width,block1.width3,block1.heght3)
-    if block1.Four == 'True': block1.solid(player.posx,player.posy,block1.posx4,block1.posy4,player.heght,player.width,block1.width4,block1.heght4)
-    if block1.Five == 'True': block1.solid(player.posx,player.posy,block1.posx5,block1.posy5,player.heght,player.width,block1.width5,block1.heght5)
+    if block1.One == 'True': solid(player.posx,player.posy,block1.posx1,block1.posy1,player.heght,player.width,block1.width1,block1.heght1)
+    if block1.Two == 'True': solid(player.posx,player.posy,block1.posx2,block1.posy2,player.heght,player.width,block1.width2,block1.heght2)
+    if block1.Three == 'True': solid(player.posx,player.posy,block1.posx3,block1.posy3,player.heght,player.width,block1.width3,block1.heght3)
+    if block1.Four == 'True': solid(player.posx,player.posy,block1.posx4,block1.posy4,player.heght,player.width,block1.width4,block1.heght4)
+    if block1.Five == 'True': solid(player.posx,player.posy,block1.posx5,block1.posy5,player.heght,player.width,block1.width5,block1.heght5)
     # Movment
     if play == True:
         if key_handler[key.W] and not key_handler[key.A] and not key_handler[key.D] and not key_handler[key.S]:
