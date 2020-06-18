@@ -8,12 +8,12 @@ One.png
 32
 32
 [block1]
-False
-
-
-
-
-
+True
+200
+200
+Four.png
+32
+32
 [block2]
 False
 
