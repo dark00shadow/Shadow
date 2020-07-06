@@ -1,7 +1,6 @@
 import pyglet
 from pyglet.window import mouse, key
 from RectangleCollision import *
-from MouseStuff import MouseStateHandler
 def read_line(filename, linenumber):
     with open(filename, 'r') as f:
         all_lines = f.read()
@@ -197,9 +196,7 @@ class restart():
         player.posy = player.oldposy
 window = pyglet.window.Window(caption=Screen_Name,width=screen_width,height=screen_height)
 key_handler = key.KeyStateHandler()
-mouse_handler = MouseStateHandler()
 window.push_handlers(key_handler)
-window.push_handlers(mouse_handler)
 
 @window.event
 def on_draw():
